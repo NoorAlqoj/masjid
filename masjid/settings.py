@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from django.utils.translation import gettext_lazy as _
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_extensions",
     "core",
 ]
 
@@ -81,7 +84,7 @@ WSGI_APPLICATION = "masjid.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite4",
     }
 }
 
@@ -110,19 +113,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Damascus"
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
-
-LANGUAGES = [
-    ("en", "English"),
-    ("ar", "العربية"),
-]
-
 LOCALE_PATHS = [
     BASE_DIR / "locale",
 ]
@@ -136,15 +133,6 @@ LANGUAGES = [
     ("en", gettext("en")),
     ("ar", gettext("ar")),
 ]
-# # Language settings
-# LANGUAGE_COOKIE_NAME = "django_language"
-# LANGUAGE_COOKIE_AGE = None
-# LANGUAGE_COOKIE_DOMAIN = None
-# LANGUAGE_COOKIE_PATH = "/"
-# LANGUAGE_COOKIE_SECURE = False
-# LANGUAGE_COOKIE_HTTPONLY = False
-# LANGUAGE_COOKIE_SAMESITE = None
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -162,7 +150,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 UNFOLD = {
-    "SITE_TITLE": "AboBaker Masjid",
-    "SITE_HEADER": "AboBaker Masjid",
-    "SITE_BRAND": "AboBaker Masjid",
+    "SITE_TITLE": _("AboBaker Masjid"),
+    "SITE_HEADER": _("AboBaker Masjid"),
+    "SITE_BRAND": _("AboBaker Masjid"),
 }
