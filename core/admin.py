@@ -43,15 +43,15 @@ class TeacherInline(admin.StackedInline):
 
 @admin.register(Teacher)
 class TeacherAdmin(ModelAdmin):
-    list_display = ("user", "phone_number", "created_at", "updated_at", "age")
-    list_filter = ("created_at", "updated_at")
+    list_display = ("user", "phone_number", "age")
+    # list_filter = ("created_at", "updated_at")
     search_fields = (
         "user__username",
         "user__email",
         "user__first_name",
         "user__last_name",
     )
-    date_hierarchy = "created_at"
+    # date_hierarchy = "created_at"
     actions = ["delete_selected"]
 
     def age(self, obj):
@@ -78,14 +78,14 @@ class CustomUserAdmin(UserAdmin, ModelAdmin):
 class StudentAdmin(ModelAdmin):
     list_display = (
         "full_name",
-        "date_of_birth",
-        "phone_number",
+        # "date_of_birth",
+        # "phone_number",
         "teacher",
         "age",
     )
     list_filter = ("teacher",)
     search_fields = ("full_name", "phone_number")
-    date_hierarchy = "date_of_birth"
+    # date_hierarchy = "date_of_birth"
     actions = ["delete_selected"]
 
     def age(self, obj):
