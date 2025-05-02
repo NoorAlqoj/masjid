@@ -43,7 +43,7 @@ class TeacherInline(admin.StackedInline):
 
 @admin.register(Teacher)
 class TeacherAdmin(ModelAdmin):
-    list_display = ("user", "phone_number", "age")
+    list_display = ("__str__", "phone_number", "age")
     # list_filter = ("created_at", "updated_at")
     search_fields = (
         "user__username",
