@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from .choices import SURAH_CHOICES
+from .choices import SURAH_CHOICES, Surah
 
 
 class Teacher(models.Model):
@@ -118,13 +118,7 @@ class MemorizationRecord(models.Model):
         related_name="memorization_records",
         verbose_name=_("session"),
     )
-    surah = models.CharField(
-        _("Surah"),
-        max_length=10,
-        choices=SURAH_CHOICES,
-        null=True,
-        blank=True,
-    )
+
     level = models.CharField(
         _("level"),
         max_length=100,
@@ -135,8 +129,24 @@ class MemorizationRecord(models.Model):
     )
     notes = models.TextField(_("notes"), null=True, blank=True)
     pages_memorized = models.PositiveIntegerField(_("pages memorized"))
+    surah = models.CharField(
+        _("Surahs"),
+        max_length=1000,
+        blank=True,
+        help_text=_("Selected surahs (comma-separated)"),
+    )
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)
     updated_at = models.DateTimeField(_("updated at"), auto_now=True)
+
+    def get_selected_surahs(self):
+        """Return selected surahs as a list"""
+        if not self.surah:
+            return []
+        return self.surah.split(",")
+
+    def set_selected_surahs(self, surahs_list):
+        """Set selected surahs from a list"""
+        self.surah = ",".join(surahs_list)
 
     class Meta:
         unique_together = ("student", "session")

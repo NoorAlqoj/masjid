@@ -1,5 +1,6 @@
 from unfold.admin import ModelAdmin
 from django.contrib import admin
+from django import forms
 
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
@@ -8,6 +9,7 @@ from django.contrib.auth.models import User
 
 from .models import Teacher, Student, Session, MemorizationRecord
 from .forms import MemorizationRecordForm
+from .choices import Surah, SURAH_CHOICES
 
 # from django.db.models import Count, Sum, Avg
 # from django.utils.html import format_html
@@ -151,30 +153,70 @@ class SessionAdmin(ModelAdmin):
 #                 return Attendance.objects.none()
 #         return qs
 
+from unfold.widgets import UnfoldAdminCheckboxSelectMultiple
+
+class MemorizationRecordForm(forms.ModelForm):
+    surah_multi = forms.MultipleChoiceField(
+        choices=SURAH_CHOICES,
+        widget=UnfoldAdminCheckboxSelectMultiple,
+        required=False,
+        label=_("Surahs"),
+    )
+
+    class Meta:
+        model = MemorizationRecord
+        fields = [
+            "student",
+            "session",
+            "surah_multi",
+            "level",
+            "pages_memorized",
+            "notes",
+        ]
+
+    def __init__(self, *args, **kwargs):
+        instance = kwargs.get("instance")
+
+        # If we have an instance, populate the multi-select with current values
+        if instance and instance.pk:
+            initial = kwargs.get("initial", {})
+            initial["surah_multi"] = instance.get_selected_surahs()
+            kwargs["initial"] = initial
+
+        super().__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+
+        # Convert multi-select choices back to comma-separated string
+        selected_surahs = self.cleaned_data.get("surah_multi", [])
+        instance.set_selected_surahs(selected_surahs)
+
+        if commit:
+            instance.save()
+
+        return instance
+
 
 @admin.register(MemorizationRecord)
 class MemorizationRecordAdmin(ModelAdmin):
-    list_display = ("student", "session", "pages_memorized")
-    list_filter = ("session", "student__teacher")
+    form = MemorizationRecordForm
+    list_display = (
+        "student",
+        "session",
+        # "get_surahs_display",
+        "level",
+        "pages_memorized",
+    )
+    list_filter = ("level",)
     search_fields = ("student__full_name",)
     date_hierarchy = "session__date"
-    actions = ["delete_selected"]
-    form = MemorizationRecordForm
-    fieldsets = (
-        (
-            None,
-            {
-                "fields": (
-                    "student",
-                    "session",
-                    "level",
-                    "pages_memorized",
-                    "notes",
-                    "surah",
-                )
-            },
-        ),
-    )
+
+    def get_surahs_display(self, obj):
+        surahs = obj.get_selected_surahs()
+        return ", ".join([dict(SURAH_CHOICES).get(s, s) for s in surahs if s])
+
+    get_surahs_display.short_description = _("Surahs")
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
