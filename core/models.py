@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from .choices import SURAH_CHOICES
 
 
 class Teacher(models.Model):
@@ -20,7 +21,7 @@ class Teacher(models.Model):
 
     def __str__(self):
         return f"{self.user.get_full_name()}"
-    
+
     @property
     def age(self):
         if self.date_of_birth:
@@ -54,16 +55,17 @@ class Student(models.Model):
     def __str__(self):
         return self.full_name
 
-    
     @property
     def age(self):
         if self.date_of_birth:
             return timezone.now().year - self.date_of_birth.year
         return None
-    
+
+
 class Session(models.Model):
     date = models.DateField(_("date"), unique=True)
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)
+
     class Meta:
         verbose_name = _("Session")
         verbose_name_plural = _("Sessions")
@@ -115,6 +117,13 @@ class MemorizationRecord(models.Model):
         on_delete=models.CASCADE,
         related_name="memorization_records",
         verbose_name=_("session"),
+    )
+    surah = models.CharField(
+        _("Surah"),
+        max_length=10,
+        choices=SURAH_CHOICES,
+        null=True,
+        blank=True,
     )
     level = models.CharField(
         _("level"),

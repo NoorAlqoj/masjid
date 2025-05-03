@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-02 21:04+0300\n"
+"POT-Creation-Date: 2025-05-03 12:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,103 +23,107 @@ msgstr ""
 msgid "Age"
 msgstr "العمر"
 
-#: core/models.py:9 core/models.py:33
+#: core/models.py:10 core/models.py:36
 msgid "phone number"
 msgstr "رقم الهاتف"
 
-#: core/models.py:10 core/models.py:44 core/models.py:61 core/models.py:123
+#: core/models.py:11 core/models.py:47 core/models.py:67 core/models.py:137
 msgid "created at"
 msgstr "تاريخ الإنشاء"
 
-#: core/models.py:11 core/models.py:45 core/models.py:124
+#: core/models.py:12 core/models.py:48 core/models.py:138
 msgid "updated at"
 msgstr "تاريخ التعديل"
 
-#: core/models.py:12 core/models.py:31
+#: core/models.py:13 core/models.py:34
 msgid "date of birth"
 msgstr "تاريخ الميلاد"
 
-#: core/models.py:13
+#: core/models.py:14
 msgid "job"
 msgstr "العمل"
 
-#: core/models.py:14
+#: core/models.py:15
 msgid "education"
 msgstr "المؤهل العلمي"
 
-#: core/models.py:15 core/models.py:43
+#: core/models.py:16 core/models.py:46
 msgid "notes"
 msgstr "ملاحظات"
 
-#: core/models.py:18
+#: core/models.py:19
 msgid "Teacher"
 msgstr "المعلم"
 
-#: core/models.py:19
+#: core/models.py:20
 msgid "Teachers"
 msgstr "المعلمون"
 
-#: core/models.py:30
+#: core/models.py:33
 msgid "full name"
 msgstr "الاسم الكامل"
 
-#: core/models.py:41
+#: core/models.py:44
 msgid "teacher"
 msgstr "المعلم"
 
-#: core/models.py:49
+#: core/models.py:52
 msgid "Student"
 msgstr "الطالب"
 
-#: core/models.py:50
+#: core/models.py:53
 msgid "Students"
 msgstr "الطلاب"
 
-#: core/models.py:60
+#: core/models.py:66
 msgid "date"
 msgstr "التاريخ"
 
-#: core/models.py:63
+#: core/models.py:70
 msgid "Session"
 msgstr "الجلسة"
 
-#: core/models.py:64
+#: core/models.py:71
 msgid "Sessions"
 msgstr "الجلسات"
 
-#: core/models.py:98
+#: core/models.py:105
 msgid "Bad"
 msgstr "ضعيف"
 
-#: core/models.py:99
+#: core/models.py:106
 msgid "Good"
 msgstr "جيد"
 
-#: core/models.py:100
+#: core/models.py:107
 msgid "Excellent"
 msgstr "ممتاز"
 
-#: core/models.py:106
+#: core/models.py:113
 msgid "student"
 msgstr "الطالب"
 
-#: core/models.py:112
+#: core/models.py:119
 msgid "session"
 msgstr "الجلسة"
 
-#: core/models.py:115
+#: core/models.py:122
+msgid "Surah"
+msgstr "السورة"
+
+#: core/models.py:129
 msgid "level"
 msgstr "المستوى"
 
-#: core/models.py:122
+#: core/models.py:136
 msgid "pages memorized"
 msgstr "الصفحات المحفوظة"
 
-#: core/models.py:128
+#: core/models.py:142
 msgid "Memorization record"
 msgstr "سجل الحفظ"
 
-#: core/models.py:129
+#: core/models.py:143
 msgid "Memorization records"
 msgstr "سجلات الحفظ"
 
