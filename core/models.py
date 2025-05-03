@@ -133,6 +133,7 @@ class MemorizationRecord(models.Model):
         blank=True,
         default="good",
     )
+    notes = models.TextField(_("notes"), null=True, blank=True)
     pages_memorized = models.PositiveIntegerField(_("pages memorized"))
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)
     updated_at = models.DateTimeField(_("updated at"), auto_now=True)

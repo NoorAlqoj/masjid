@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 # from django.contrib.auth import admin as auth_admin
 
 from .models import Teacher, Student, Session, MemorizationRecord
+from .forms import MemorizationRecordForm
 
 # from django.db.models import Count, Sum, Avg
 # from django.utils.html import format_html
@@ -158,6 +159,22 @@ class MemorizationRecordAdmin(ModelAdmin):
     search_fields = ("student__full_name",)
     date_hierarchy = "session__date"
     actions = ["delete_selected"]
+    form = MemorizationRecordForm
+    fieldsets = (
+        (
+            None,
+            {
+                "fields": (
+                    "student",
+                    "session",
+                    "level",
+                    "pages_memorized",
+                    "notes",
+                    "surah",
+                )
+            },
+        ),
+    )
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
