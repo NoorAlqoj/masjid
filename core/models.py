@@ -104,6 +104,7 @@ class MemorizationRecord(models.Model):
     LEVEL_CHOICES = [
         ("bad", _("Bad")),
         ("good", _("Good")),
+        ("very_good", _("Very Good")),
         ("excellent", _("Excellent")),
     ]
     student = models.ForeignKey(
@@ -128,11 +129,14 @@ class MemorizationRecord(models.Model):
         default="good",
     )
     notes = models.TextField(_("notes"), null=True, blank=True)
-    pages_memorized = models.PositiveIntegerField(_("pages memorized"))
+    pages_memorized = models.DecimalField(
+        _("pages memorized"), max_digits=5, decimal_places=1, default=0
+    )
     surah = models.CharField(
         _("Surahs"),
         max_length=1000,
         blank=True,
+        null=True,
         help_text=_("Selected surahs (comma-separated)"),
     )
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-03 12:04+0300\n"
+"POT-Creation-Date: 2025-05-06 00:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,19 +19,485 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: core/admin.py:60 core/admin.py:94
+#: core/admin.py:63 core/admin.py:97
 msgid "Age"
 msgstr "العمر"
+
+#: core/admin.py:163 core/admin.py:219 core/models.py:136
+#, fuzzy
+#| msgid "Surah"
+msgid "Surahs"
+msgstr "السورة"
+
+#: core/choices.py:6
+msgid "الفاتحة"
+msgstr ""
+
+#: core/choices.py:7
+msgid "البقرة"
+msgstr ""
+
+#: core/choices.py:8
+msgid "آل عمران"
+msgstr ""
+
+#: core/choices.py:9
+msgid "النساء"
+msgstr ""
+
+#: core/choices.py:10
+msgid "المائدة"
+msgstr ""
+
+#: core/choices.py:11
+msgid "الأنعام"
+msgstr ""
+
+#: core/choices.py:12
+msgid "الأعراف"
+msgstr ""
+
+#: core/choices.py:13
+msgid "الأنفال"
+msgstr ""
+
+#: core/choices.py:14
+msgid "التوبة"
+msgstr ""
+
+#: core/choices.py:15
+msgid "يونس"
+msgstr ""
+
+#: core/choices.py:16
+msgid "هود"
+msgstr ""
+
+#: core/choices.py:17
+msgid "يوسف"
+msgstr ""
+
+#: core/choices.py:18
+msgid "الرعد"
+msgstr ""
+
+#: core/choices.py:19
+msgid "إبراهيم"
+msgstr ""
+
+#: core/choices.py:20
+msgid "الحجر"
+msgstr ""
+
+#: core/choices.py:21
+msgid "النحل"
+msgstr ""
+
+#: core/choices.py:22
+msgid "الإسراء"
+msgstr ""
+
+#: core/choices.py:23
+msgid "الكهف"
+msgstr ""
+
+#: core/choices.py:24
+msgid "مريم"
+msgstr ""
+
+#: core/choices.py:25
+msgid "طه"
+msgstr ""
+
+#: core/choices.py:26
+msgid "الأنبياء"
+msgstr ""
+
+#: core/choices.py:27
+msgid "الحج"
+msgstr ""
+
+#: core/choices.py:28
+msgid "المؤمنون"
+msgstr ""
+
+#: core/choices.py:29
+msgid "النور"
+msgstr ""
+
+#: core/choices.py:30
+msgid "الفرقان"
+msgstr ""
+
+#: core/choices.py:31
+msgid "الشعراء"
+msgstr ""
+
+#: core/choices.py:32
+msgid "النمل"
+msgstr ""
+
+#: core/choices.py:33
+msgid "القصص"
+msgstr ""
+
+#: core/choices.py:34
+msgid "العنكبوت"
+msgstr ""
+
+#: core/choices.py:35
+msgid "الروم"
+msgstr ""
+
+#: core/choices.py:36
+msgid "لقمان"
+msgstr ""
+
+#: core/choices.py:37
+msgid "السجدة"
+msgstr ""
+
+#: core/choices.py:38
+msgid "الأحزاب"
+msgstr ""
+
+#: core/choices.py:39
+msgid "سبأ"
+msgstr ""
+
+#: core/choices.py:40
+msgid "فاطر"
+msgstr ""
+
+#: core/choices.py:41
+msgid "يس"
+msgstr ""
+
+#: core/choices.py:42
+msgid "الصافات"
+msgstr ""
+
+#: core/choices.py:43
+msgid "ص"
+msgstr ""
+
+#: core/choices.py:44
+msgid "الزمر"
+msgstr ""
+
+#: core/choices.py:45
+msgid "غافر"
+msgstr ""
+
+#: core/choices.py:46
+msgid "فصلت"
+msgstr ""
+
+#: core/choices.py:47
+msgid "الشورى"
+msgstr ""
+
+#: core/choices.py:48
+msgid "الزخرف"
+msgstr ""
+
+#: core/choices.py:49
+msgid "الدخان"
+msgstr ""
+
+#: core/choices.py:50
+msgid "الجاثية"
+msgstr ""
+
+#: core/choices.py:51
+msgid "الأحقاف"
+msgstr ""
+
+#: core/choices.py:52
+msgid "محمد"
+msgstr ""
+
+#: core/choices.py:53
+msgid "الفتح"
+msgstr ""
+
+#: core/choices.py:54
+msgid "الحجرات"
+msgstr ""
+
+#: core/choices.py:55
+msgid "ق"
+msgstr ""
+
+#: core/choices.py:56
+msgid "الذاريات"
+msgstr ""
+
+#: core/choices.py:57
+msgid "الطور"
+msgstr ""
+
+#: core/choices.py:58
+msgid "النجم"
+msgstr ""
+
+#: core/choices.py:59
+msgid "القمر"
+msgstr ""
+
+#: core/choices.py:60
+msgid "الرحمن"
+msgstr ""
+
+#: core/choices.py:61
+msgid "الواقعة"
+msgstr ""
+
+#: core/choices.py:62
+msgid "الحديد"
+msgstr ""
+
+#: core/choices.py:63
+msgid "المجادلة"
+msgstr ""
+
+#: core/choices.py:64
+msgid "الحشر"
+msgstr ""
+
+#: core/choices.py:65
+msgid "الممتحنة"
+msgstr ""
+
+#: core/choices.py:66
+msgid "الصف"
+msgstr ""
+
+#: core/choices.py:67
+msgid "الجمعة"
+msgstr ""
+
+#: core/choices.py:68
+msgid "المنافقون"
+msgstr ""
+
+#: core/choices.py:69
+msgid "التغابن"
+msgstr ""
+
+#: core/choices.py:70
+msgid "الطلاق"
+msgstr ""
+
+#: core/choices.py:71
+msgid "التحريم"
+msgstr ""
+
+#: core/choices.py:72
+msgid "الملك"
+msgstr ""
+
+#: core/choices.py:73
+msgid "القلم"
+msgstr ""
+
+#: core/choices.py:74
+msgid "الحاقة"
+msgstr ""
+
+#: core/choices.py:75
+msgid "المعارج"
+msgstr ""
+
+#: core/choices.py:76
+msgid "نوح"
+msgstr ""
+
+#: core/choices.py:77
+msgid "الجن"
+msgstr ""
+
+#: core/choices.py:78
+msgid "المزمل"
+msgstr ""
+
+#: core/choices.py:79
+msgid "المدثر"
+msgstr ""
+
+#: core/choices.py:80
+msgid "القيامة"
+msgstr ""
+
+#: core/choices.py:81
+msgid "الإنسان"
+msgstr ""
+
+#: core/choices.py:82
+msgid "المرسلات"
+msgstr ""
+
+#: core/choices.py:83
+msgid "النبأ"
+msgstr ""
+
+#: core/choices.py:84
+msgid "النازعات"
+msgstr ""
+
+#: core/choices.py:85
+msgid "عبس"
+msgstr ""
+
+#: core/choices.py:86
+msgid "التكوير"
+msgstr ""
+
+#: core/choices.py:87
+msgid "الانفطار"
+msgstr ""
+
+#: core/choices.py:88
+msgid "المطففين"
+msgstr ""
+
+#: core/choices.py:89
+msgid "الانشقاق"
+msgstr ""
+
+#: core/choices.py:90
+msgid "البروج"
+msgstr ""
+
+#: core/choices.py:91
+msgid "الطارق"
+msgstr ""
+
+#: core/choices.py:92
+msgid "الأعلى"
+msgstr ""
+
+#: core/choices.py:93
+msgid "الغاشية"
+msgstr ""
+
+#: core/choices.py:94
+msgid "الفجر"
+msgstr ""
+
+#: core/choices.py:95
+msgid "البلد"
+msgstr ""
+
+#: core/choices.py:96
+msgid "الشمس"
+msgstr ""
+
+#: core/choices.py:97
+msgid "الليل"
+msgstr ""
+
+#: core/choices.py:98
+msgid "الضحى"
+msgstr ""
+
+#: core/choices.py:99
+msgid "الشرح"
+msgstr ""
+
+#: core/choices.py:100
+msgid "التين"
+msgstr ""
+
+#: core/choices.py:101
+msgid "العلق"
+msgstr ""
+
+#: core/choices.py:102
+msgid "القدر"
+msgstr ""
+
+#: core/choices.py:103
+msgid "البينة"
+msgstr ""
+
+#: core/choices.py:104
+msgid "الزلزلة"
+msgstr ""
+
+#: core/choices.py:105
+msgid "العاديات"
+msgstr ""
+
+#: core/choices.py:106
+msgid "القارعة"
+msgstr ""
+
+#: core/choices.py:107
+msgid "التكاثر"
+msgstr ""
+
+#: core/choices.py:108
+msgid "العصر"
+msgstr ""
+
+#: core/choices.py:109
+msgid "الهمزة"
+msgstr ""
+
+#: core/choices.py:110
+msgid "الفيل"
+msgstr ""
+
+#: core/choices.py:111
+msgid "قريش"
+msgstr ""
+
+#: core/choices.py:112
+msgid "الماعون"
+msgstr ""
+
+#: core/choices.py:113
+msgid "الكوثر"
+msgstr ""
+
+#: core/choices.py:114
+msgid "الكافرون"
+msgstr ""
+
+#: core/choices.py:115
+msgid "النصر"
+msgstr ""
+
+#: core/choices.py:116
+msgid "المسد"
+msgstr ""
+
+#: core/choices.py:117
+msgid "الإخلاص"
+msgstr ""
+
+#: core/choices.py:118
+msgid "الفلق"
+msgstr ""
+
+#: core/choices.py:119
+msgid "الناس"
+msgstr ""
+
+#: core/forms.py:17
+msgid "Surah"
+msgstr "السورة"
 
 #: core/models.py:10 core/models.py:36
 msgid "phone number"
 msgstr "رقم الهاتف"
 
-#: core/models.py:11 core/models.py:47 core/models.py:67 core/models.py:137
+#: core/models.py:11 core/models.py:47 core/models.py:67 core/models.py:142
 msgid "created at"
 msgstr "تاريخ الإنشاء"
 
-#: core/models.py:12 core/models.py:48 core/models.py:138
+#: core/models.py:12 core/models.py:48 core/models.py:143
 msgid "updated at"
 msgstr "تاريخ التعديل"
 
@@ -47,7 +513,7 @@ msgstr "العمل"
 msgid "education"
 msgstr "المؤهل العلمي"
 
-#: core/models.py:16 core/models.py:46
+#: core/models.py:16 core/models.py:46 core/models.py:131
 msgid "notes"
 msgstr "ملاحظات"
 
@@ -96,34 +562,38 @@ msgid "Good"
 msgstr "جيد"
 
 #: core/models.py:107
+msgid "Very Good"
+msgstr "جيد جدا"
+
+#: core/models.py:108
 msgid "Excellent"
 msgstr "ممتاز"
 
-#: core/models.py:113
+#: core/models.py:114
 msgid "student"
 msgstr "الطالب"
 
-#: core/models.py:119
+#: core/models.py:120
 msgid "session"
 msgstr "الجلسة"
 
-#: core/models.py:122
-msgid "Surah"
-msgstr "السورة"
-
-#: core/models.py:129
+#: core/models.py:124
 msgid "level"
 msgstr "المستوى"
 
-#: core/models.py:136
+#: core/models.py:133
 msgid "pages memorized"
 msgstr "الصفحات المحفوظة"
 
-#: core/models.py:142
+#: core/models.py:140
+msgid "Selected surahs (comma-separated)"
+msgstr ""
+
+#: core/models.py:157
 msgid "Memorization record"
 msgstr "سجل الحفظ"
 
-#: core/models.py:143
+#: core/models.py:158
 msgid "Memorization records"
 msgstr "سجلات الحفظ"
 
